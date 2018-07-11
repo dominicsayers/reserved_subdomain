@@ -6,6 +6,7 @@ gemspec
 
 group :test do
   gem 'rspec'
+  gem 'simplecov-console'
 end
 
 local_gemfile = 'Gemfile.local'
