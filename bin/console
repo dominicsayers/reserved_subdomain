@@ -1,0 +1,2 @@
+#!/bin/sh
+bundle exec irb -I lib -r rubygems -r reserved_subdomain.rb

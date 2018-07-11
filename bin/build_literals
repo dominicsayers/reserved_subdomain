@@ -1,0 +1,45 @@
+#!/usr/bin/env ruby
+# frozen_string_literal: true
+
+lib = File.expand_path('../lib', __dir__)
+$LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
+
+require 'open-uri'
+require 'reserved_subdomain'
+
+def write_file(content, filename)
+  filepath = File.join(__dir__, '..', 'lib', 'reserved_subdomain', 'literals', filename)
+  File.open(filepath, 'w') { |f| f.write content.join("\n") }
+end
+
+# Remove existing literals that exist in content
+def remove_literals(content)
+  literals = ReservedSubdomain::Literal.load_literals.dup
+  literals.select! { |literal| !content.include?(literal) }
+  write_file literals, 'reserved_subdomains.txt'
+end
+
+# TLDs
+uri = URI.parse('http://data.iana.org/TLD/tlds-alpha-by-domain.txt')
+tlds = uri.read.downcase.split("\n")
+remove_literals(tlds)
+
+tlds.select! do |tld|
+  (tld !~ /^#/) &&
+    !ReservedSubdomain::Prefix.new(tld).reserved? &&
+    !ReservedSubdomain::Pattern.new(tld).reserved?
+end
+
+write_file tlds, 'tlds.txt'
+
+# Country codes
+# TODO: Find source of ISO-3166-1 country codes and add them to the list of literals
+filepath = File.join(__dir__, '..', 'lib', 'reserved_subdomain', 'literals', 'iso-3166-1.txt')
+country_codes = File.read(filepath).split("\n").compact
+remove_literals(country_codes)
+
+# Language codes
+# TODO: Find a source of ISO-639 language codes and add them to the list of literals
+filepath = File.join(__dir__, '..', 'lib', 'reserved_subdomain', 'literals', 'iso-639-1.txt')
+language_codes = File.read(filepath).split("\n").compact
+remove_literals(language_codes)
