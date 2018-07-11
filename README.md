@@ -1,0 +1,2 @@
+# reserved_subdomain
+[![Codacy Badge](https://api.codacy.com/project/badge/Grade/eb7fdb66de754e7e886972a56df2c518)](https://app.codacy.com/app/dominicsayers/reserved_subdomain?utm_source=github.com&utm_medium=referral&utm_content=dominicsayers/reserved_subdomain&utm_campaign=badger)
