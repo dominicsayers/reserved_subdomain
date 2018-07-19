@@ -4,6 +4,7 @@
 
 **Merged pull requests:**
 
+- New build [\#4](https://github.com/dominicsayers/reserved_subdomain/pull/4) ([dominicsayers](https://github.com/dominicsayers))
 - Add Simplecov and report to CodeClimate from Travis [\#3](https://github.com/dominicsayers/reserved_subdomain/pull/3) ([dominicsayers](https://github.com/dominicsayers))
 - Initial commit [\#1](https://github.com/dominicsayers/reserved_subdomain/pull/1) ([dominicsayers](https://github.com/dominicsayers))
 
