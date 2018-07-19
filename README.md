@@ -26,6 +26,10 @@ gem 'reserved_subdomain'
 ReservedSubdomain.new('www').reserved? # => true
 ```
 
+## Reserved subdomains
+
+The actual subdomain names that are marked as reserved can be found in the text files in the [literals](https://github.com/dominicsayers/reserved_subdomain/tree/master/lib/reserved_subdomain/literals) directory.
+
 ## Configuration
 
 Each time you use ReservedSubdomain it loads the list of reserved names from a file. This can be slow if you're doing these checks frequently.
