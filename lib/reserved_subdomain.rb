@@ -1,3 +1,4 @@
+require 'reserved_subdomain/file'
 require 'reserved_subdomain/literal'
 require 'reserved_subdomain/pattern'
 require 'reserved_subdomain/prefix'
