@@ -13,17 +13,7 @@ class ReservedSubdomain
       end
 
       def load_literals
-        literals_files.map { |filename| File.read(filename).split("\n") }.compact.flatten
-      end
-
-      private
-
-      def literals_files
-        Dir.glob(File.join(literals_directory, '*'))
-      end
-
-      def literals_directory
-        @literals_directory ||= File.join(__dir__, 'literals')
+        ReservedSubdomain::File.load('*')
       end
     end
 

@@ -139,7 +139,6 @@ ecommerce
 edit
 editor
 edits
-eh
 embed
 embedded
 employment
@@ -321,6 +320,7 @@ msn
 mssql
 music
 musicas
+mx
 mysql
 nagios
 named
@@ -447,7 +447,6 @@ spanish
 speedtest
 sports
 sql
-ss
 ssh
 ssl
 ssladmin
