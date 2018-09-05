@@ -26,6 +26,10 @@ gem 'reserved_subdomain'
 ReservedSubdomain.new('www').reserved? # => true
 ```
 
+## Reserved subdomains
+
+The actual subdomain names that are marked as reserved can be found in the text files in the [literals](https://github.com/dominicsayers/reserved_subdomain/tree/master/lib/reserved_subdomain/literals) directory.
+
 ## Configuration
 
 Each time you use ReservedSubdomain it loads the list of reserved names from a file. This can be slow if you're doing these checks frequently.
@@ -33,3 +37,12 @@ Each time you use ReservedSubdomain it loads the list of reserved names from a f
 In this case you can set the environment variable `RESERVED_SUBDOMAIN_PRELOAD` to "true" and the list will be preloaded.
 
 Of course if you preload the list it will stay memory-resident and take up a significant amount of room. Your call.
+
+## Contributing
+
+1.  Fork the repo into your own account.
+1.  Copy the `Gemfile.local.example` to `Gemfile.local` and edit as you see fit.
+1.  Organize your changes into easy-to-understand commits.
+2.  Submit a pull request for me to merge.
+
+If you need to update the text files, run the `bin/build_literals` job to ensure there are no duplicates.
