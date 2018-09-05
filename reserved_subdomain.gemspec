@@ -11,6 +11,6 @@ Gem::Specification.new do |s|
   s.homepage      = 'https://github.com/dominicsayers/reserved_subdomain'
   s.license       = 'MIT'
 
-  s.files = `git ls-files`.split($RS).reject { |file| file =~ %r{^spec/} }
+  s.files = `git ls-files lib LICENSE`.split($RS)
   s.require_paths = ['lib']
 end
