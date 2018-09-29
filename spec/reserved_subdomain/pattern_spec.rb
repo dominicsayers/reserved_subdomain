@@ -5,7 +5,6 @@ class ReservedSubdomain
         tech-support
         tech_support
         v1
-        xn--punycode
       ].freeze
 
       UNRESERVED_BY_PATTERN = %w[

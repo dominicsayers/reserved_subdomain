@@ -4,7 +4,6 @@ class ReservedSubdomain
       /.*[_-]feed$/,
       /.*[_-]support$/,
       /^v[0-9]{,2}$/,
-      /^xn--/,
     ].freeze
 
     attr_reader :subdomain
